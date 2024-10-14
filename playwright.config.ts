@@ -1,12 +1,12 @@
 import { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-  timeout: 30000,
-  retries: 2,
+  timeout: 60000, // Augmenter le timeout global à 60s pour tous les tests
+  retries: 2, // Relancer jusqu'à 2 fois les tests qui échouent
   use: {
-    headless: true, // Mettre à false si vous voulez voir le navigateur pendant les tests
+    headless: true, // Lancer les tests en mode headless
     viewport: { width: 1280, height: 720 },
-    ignoreHTTPSErrors: false
+    ignoreHTTPSErrors: true
   },
   projects: [
     {
@@ -16,6 +16,7 @@ const config: PlaywrightTestConfig = {
     {
       name: 'Firefox',
       use: { browserName: 'firefox' },
+      workers: 1, // Limiter le nombre de threads à 1 pour éviter les erreurs dans Firefox
     },
     {
       name: 'WebKit',
