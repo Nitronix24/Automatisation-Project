@@ -1,52 +1,19 @@
 Feature: Tests fonctionnels sur Amazon.fr
 
-  Scenario: Recherche d'un produit
-    Given je suis sur la page d'accueil d'Amazon.fr
-    When je recherche "montre intelligente" dans la barre de recherche
-    Then je devrais voir des résultats de produits liés à "montre intelligente"
+Création de compte,                                                       Collins
+login,                                                                    Collins
+logout,                                                                   Collins
+Création de compte avec un email existant,                                Collins
+Vérifier le contenu de la page d’accueil,                                 Antonin
+un produit dans le moteur de recherche puis l’acheter,      
+Rechercher
+Rechercher un produit par une catégorie de produit,                       Gael
+Mettre un produit dans le panier,                                         Cedric
+Vérifier les quantités de produit dans le panier,                         Cedric
+Passer une commande avec une création de compte pendant le checkout,      
+Passer une commande avec un login pendant le checkout,
+supprimer produit du panier,                                              Cedric
+Sur une catégorie vérifier les filtres et différentes catégories,         Gael
+Acheter les “Produits fréquemment achetés ensemble” ,                     
+Vérifier les adresses de livraison…                                       Franck
 
-  Scenario: Filtrer les résultats de recherche
-    Given je suis sur la page de résultats de recherche pour "montre intelligente"
-    When je filtre les résultats par "Prix: Moins de 50€"
-    Then je devrais voir uniquement des produits dont le prix est inférieur à 50€
-
-  Scenario: Ajouter un produit au panier
-    Given je suis sur la page d'un produit "montre intelligente"
-    When je clique sur "Ajouter au panier"
-    Then je devrais voir un message confirmant que le produit a été ajouté au panier
-
-  Scenario: Afficher le panier
-    Given j'ai ajouté un produit au panier
-    When je clique sur l'icône du panier
-    Then je devrais voir le produit que j'ai ajouté
-
-  Scenario: Passer une commande
-    Given j'ai un produit dans mon panier
-    When je clique sur "Passer la commande"
-    Then je devrais être redirigé vers la page de paiement
-
-  Scenario: Vérifier la disponibilité d'un produit
-    Given je suis sur la page d'un produit "montre intelligente"
-    When je vérifie la section "Disponibilité"
-    Then je devrais voir si le produit est en stock ou non
-
-  Scenario: Évaluer un produit
-    Given je suis sur la page d'un produit "montre intelligente"
-    When je clique sur "Écrire un avis"
-    Then je devrais pouvoir laisser une évaluation et un commentaire
-
-  Scenario: Rechercher un produit sans résultat
-    Given je suis sur la page d'accueil d'Amazon.fr
-    When je recherche "produit inexistant"
-    Then je devrais voir un message indiquant qu'aucun résultat n'a été trouvé
-
-  Scenario: Changer la langue du site
-    Given je suis sur la page d'accueil d'Amazon.fr
-    When je sélectionne "English" dans le menu de langue
-    Then le contenu de la page devrait être affiché en anglais
-
-  Scenario: Se connecter à un compte
-    Given je suis sur la page d'accueil d'Amazon.fr
-    When je clique sur "Se connecter"
-    And je saisis mes identifiants de connexion
-    Then je devrais être connecté à mon compte
