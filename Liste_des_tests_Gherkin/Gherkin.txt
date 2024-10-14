@@ -50,7 +50,19 @@ Feature: Gestion du panier sur Amazon.com
     Then Je devrais voir un message "Votre panier est vide"
     And Le bouton "Passer la commande" ne devrait pas être actif
 
+Feature: Gestion des adresses sur Amazon.fr
 
+  Scenario: Vérifier les adresses de livraison disponibles pour un utilisateur connecté
+    Given l'utilisateur est connecté à son compte Amazon
+    When l'utilisateur accède à la page "Mes adresses"
+    Then l'utilisateur voit une liste des adresses de livraison disponibles
+
+  Scenario: Ajouter une nouvelle adresse de livraison
+    Given l'utilisateur est connecté à son compte Amazon
+    When l'utilisateur accède à la page "Ajouter une adresse"
+    And l'utilisateur saisit les informations d'adresse valides
+    Then une nouvelle adresse de livraison est ajoutée à la liste
+    
 Feature: Tests sur les filtres et catégories
 
   Scenario: Sur une catégorie, vérifier les filtres "Marques" et "Vendeur"
@@ -68,3 +80,33 @@ Feature: Tests sur les filtres et catégories
     And je clique sur "Gros électroménager"
     And je clique sur "Lave-linges"
     Then je devrais arriver sur une page avec uniquement des lave-linges
+
+Feature: Vérification de la page d'accueil
+
+  Scenario: Vérifier la présence du logo
+    Given je suis sur une page du site
+    Then je devrais voir le logo d'Amazon
+    When je clique sur le logo
+    Then je devrais être redirigé vers la page d'accueil
+
+Feature: Vérification de la barre de recherche
+
+  Scenario: Vérifier la présence de la barre de recherche
+    Given je suis sur la page d'accueil d'Amazon
+    Then je devrais voir une barre de recherche
+
+Feature: Vérification des produits populaires
+
+  Scenario: Vérifier la section des produits populaires
+    Given je suis sur la page d'accueil d'Amazon
+    Then je devrais voir une section pour les produits populaires
+    When je clique sur le bouton produits populaires
+    Then je devrais être redirigé vers la section produits populaires
+
+Feature: Vérification des ventes flash
+
+  Scenario: Vérifier les recommandations personnalisées
+    Given je suis sur la page d'accueil d'Amazon
+    Then je devrais voir une section ventes flash
+    When je clique sur le bouton ventes flash
+    Then je devrais être redirigé vers la section ventes flash
