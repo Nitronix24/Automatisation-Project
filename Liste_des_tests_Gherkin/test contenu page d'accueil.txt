@@ -1,0 +1,25 @@
+Feature: Vérification de la page d'accueil
+  Scenario: Vérifier la présence du logo
+    Given je suis sur une page du site
+    Then je devrais voir le logo d'Amazon
+    When je clique sur le logo
+    Then je devrais être redirigé vers la page d'accueil
+
+Feature: Vérification de la barre de recherche
+  Scenario: Vérifier la présence de la barre de recherche
+    Given je suis sur la page d'accueil d'Amazon
+    Then je devrais voir une barre de recherche
+
+Feature: Vérification des produits populaires
+  Scenario: Vérifier la section des produits populaires
+    Given je suis sur la page d'accueil d'Amazon
+    Then je devrais voir une section pour les produits populaires
+    When je clique sur le bouton produits populaires
+    Then je devrais être redirigé vers la section produits populaires
+
+Feature: Vérification des ventes flash
+  Scenario: Vérifier les recommandations personnalisées
+    Given je suis sur la page d'accueil d'Amazon
+    Then je devrais voir une section ventes flash
+    When je clique sur le bouton ventes flash
+    Then je devrais être redirigé vers la section ventes flash
