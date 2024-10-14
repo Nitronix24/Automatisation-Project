@@ -6,8 +6,13 @@ const config: PlaywrightTestConfig = {
   use: {
     headless: true, // Lancer les tests en mode headless
     viewport: { width: 1280, height: 720 },
-    ignoreHTTPSErrors: true
+    ignoreHTTPSErrors: true,
+    screenshot: 'only-on-failure', //
+    trace: 'retain-on-failure',
   },
+  reporter: [
+    ['html', { outputFolder: 'playwright-report', open: 'on-failure' }],
+  ],
   projects: [
     {
       name: 'Chromium',
@@ -16,7 +21,6 @@ const config: PlaywrightTestConfig = {
     {
       name: 'Firefox',
       use: { browserName: 'firefox' },
-      workers: 1, // Limiter le nombre de threads à 1 pour éviter les erreurs dans Firefox
     },
     {
       name: 'WebKit',
