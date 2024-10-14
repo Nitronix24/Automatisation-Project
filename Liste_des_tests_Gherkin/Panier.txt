@@ -1,3 +1,27 @@
+Feature: Création et connexion sur Amazon.fr
+
+  Scenario: Login
+    Given User
+    When je clique sur Bonjour,identifiez-vous compte et listes
+    and j'entre l'adresse email
+    and je clique sur continuer
+    and j'entre le mot de Passer
+    Then je clique sur continuer
+
+  Scenario: Creation de compte
+    Given je suis la page d'accueil d'Amazon
+    When je clique sur Bonjour,identifiez-vous compte et listes
+    And je clique sur creer votre compte Amazon
+    and j'entre mon nom complet
+    and j'entre mon numero de telephone portable ou l'adresse-email
+    and j'entre le mot de passe
+    and j'entre le mot de passe a nouveau
+    and je clique sur continuer
+    and je complete le puzzle
+    and entrer le code recu sur mon adresse email
+    Then je clique sur verifier
+
+
 Feature: Gestion du panier sur Amazon.com
 
   Scenario: Utilisateur visualise le contenu de son panier
@@ -25,3 +49,22 @@ Feature: Gestion du panier sur Amazon.com
     When Je clique sur "Voir mon panier"
     Then Je devrais voir un message "Votre panier est vide"
     And Le bouton "Passer la commande" ne devrait pas être actif
+
+
+Feature: Tests sur les filtres et catégories
+
+  Scenario: Sur une catégorie, vérifier les filtres "Marques" et "Vendeur"
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je clique sur le menu hamburger "Toutes"
+    And je navigue vers la catégorie "Cuisine et maison"
+    And je clique sur "Gros électroménager"
+    And je coche une checkbox par filtres pour"Marques" et "Vendeur"
+    Then je devrais ne voir que des produits de la marque sélectionée vendue par le vendeur sélectioné
+
+  Scenario: Rechercher un produit par une catégorie de produit
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je clique sur le menu hamburger "Toutes"
+    And je navigue vers la catégorie "Cuisine et maison"
+    And je clique sur "Gros électroménager"
+    And je clique sur "Lave-linges"
+    Then je devrais arriver sur une page avec uniquement des lave-linges
