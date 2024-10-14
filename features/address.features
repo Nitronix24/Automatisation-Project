@@ -1,0 +1,12 @@
+Feature: Gestion des adresses sur Amazon.fr
+
+  Scenario: Vérifier les adresses de livraison disponibles pour un utilisateur connecté
+    Given l'utilisateur est connecté à son compte Amazon
+    When l'utilisateur accède à la page "Mes adresses"
+    Then l'utilisateur voit une liste des adresses de livraison disponibles
+
+  Scenario: Ajouter une nouvelle adresse de livraison
+    Given l'utilisateur est connecté à son compte Amazon
+    When l'utilisateur accède à la page "Ajouter une adresse"
+    And l'utilisateur saisit les informations d'adresse valides
+    Then une nouvelle adresse de livraison est ajoutée à la liste
