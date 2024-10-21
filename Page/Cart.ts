@@ -1,7 +1,7 @@
 import { Locator, Page } from '@playwright/test';
 
 
-class CartPage {
+export class CartPage {
     readonly page: Page;
     readonly productTitle: Locator;
     readonly emptyCartMessage: Locator;
@@ -14,6 +14,10 @@ class CartPage {
       this.deleteButton = page.locator('//*[@value="Supprimer"]');
     }
   
+    async getProductTitle() {
+      return await this.productTitle.innerText();
+    }   
 
+    
   }
   

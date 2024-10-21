@@ -9,7 +9,7 @@ export class HomePage {
     constructor(page) {
         this.page = page;
         this.searchBox = page.locator('//*[@id="twotabsearchtextbox"]');
-        this.searchButton = page.locator('//*[@id="nav-search-submit-button]');
+        this.searchButton = page.locator('//*[@id="nav-search-submit-button"]');
         this.cartLink = page.locator('//*[@id="nav-cart-count-container"]');
       }
     
@@ -22,3 +22,5 @@ export class HomePage {
         await this.cartLink.click();
       }
     }
+
+    //npx playwright codegen https://www.amazon.fr

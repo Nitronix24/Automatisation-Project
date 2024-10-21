@@ -21,18 +21,16 @@ Feature: Création et connexion sur Amazon.fr
     and entrer le code recu sur mon adresse email
     Then je clique sur verifier
 
-
 Feature: Gestion du panier sur Amazon.com
 
   Scenario: Utilisateur visualise le contenu de son panier
     Given Je suis sur la page d'accueil d'Amazon
-    When Je recherche "montre intelligente" dans la barre de recherche
+    When Je recherche "écouteurs sans fil" dans la barre de recherche
     And Je clique sur le premier produit dans les résultats de recherche
     And Je clique sur le bouton "Ajouter au panier"
-    And Je refuse l'assurance
     And Je clique sur "Voir mon panier"
     Then Je devrais être redirigé vers la page du panier
-    And Je devrais voir "montre intelligente" dans mon panier
+    And Je devrais voir "écouteurs sans fil" dans mon panier
 
   Scenario: Utilisateur supprime un produit de son panier
     Given Je suis sur la page d'accueil d'Amazon
@@ -88,12 +86,6 @@ Feature: Vérification de la page d'accueil
     Then je devrais voir le logo d'Amazon
     When je clique sur le logo
     Then je devrais être redirigé vers la page d'accueil
-
-Feature: Vérification de la barre de recherche
-
-  Scenario: Vérifier la présence de la barre de recherche
-    Given je suis sur la page d'accueil d'Amazon
-    Then je devrais voir une barre de recherche
 
 Feature: Vérification des produits populaires
 
