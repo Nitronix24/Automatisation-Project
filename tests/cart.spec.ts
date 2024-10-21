@@ -3,7 +3,7 @@ import { expect } from '@playwright/test';
 
 test.describe('Tests de gestion du panier', () => {
 
-  test.beforeEach(async ({ page, homePage }) => {
+  test.beforeEach(async ({ page}) => {
     // Accéder à la page d'accueil d'Amazon avant chaque test
     await page.goto('https://www.amazon.fr');
   });
