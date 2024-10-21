@@ -1,4 +1,4 @@
-import { test} from './fixtures';  // Importer les fixtures depuis fixtures.js
+import { test} from './fixtures_for_cart';  // Importer les fixtures depuis fixtures.js
 import { expect } from '@playwright/test';
 
 test.describe('Tests de gestion du panier', () => {
