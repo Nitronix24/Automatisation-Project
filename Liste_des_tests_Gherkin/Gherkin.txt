@@ -42,7 +42,7 @@ Feature: Gestion du panier sur Amazon.com
     Then Je devrais voir un message "L'article a été supprimé de votre panier"
     And Le produit ne devrait plus apparaître dans mon panier
 
-  Scenario: Utilisateur essaie de commander un produit sans article dans le panier
+  Scenario: Utilisateur n'a pas d'article dans le panier lors de sa première visite
     Given Je suis sur la page d'accueil d'Amazon
     When Je clique sur "Voir mon panier"
     Then Je devrais voir un message "Votre panier est vide"
