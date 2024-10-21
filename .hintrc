@@ -11,6 +11,12 @@
           "overscroll-behavior-x: none"
         ]
       }
+    ],
+    "axe/language": [
+      "default",
+      {
+        "html-has-lang": "off"
+      }
     ]
   }
 }
