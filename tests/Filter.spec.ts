@@ -23,6 +23,23 @@ test('filter by brand and seller', async ({page, homePage, largeAppliancesPage }
 
     await homePage.grosElectromenagerClick();
 
+    await largeAppliancesPage.filterByBrand();
+
+    await largeAppliancesPage.seeMoreSellerClick();
+
+    await largeAppliancesPage.filterBySeller();
+
+    await page.waitForTimeout(5000);
+});
+
+test('filter by product', async ({page, homePage, largeAppliancesPage }) => {
+
+    await homePage.hamburgerMenuClick();
+
+    await homePage.KitchenAndHouseClick();
+
+    await homePage.grosElectromenagerClick();
+
     await largeAppliancesPage.seeWashingMachineClick(); 
 
     await page.waitForTimeout(5000);

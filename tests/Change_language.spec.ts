@@ -15,7 +15,7 @@ test.beforeEach(async ({ page }) => {
     await page.locator('#sp-cc-rejectall-link').click();
 });
 
-test('filter by brand and seller', async ({page, homePage }) => {
+test('change language', async ({page, homePage }) => {
 
     await homePage.languageClick();
 
