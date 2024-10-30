@@ -14,7 +14,6 @@ export class LoginLayoutPage {
         this.page = page;
         this.identificationButton = page.getByRole('link', { name: 'Bonjour, Identifiez-vous' });
         this.emailLocator = page.locator("#ap_email");
-        //this.passwordLocator=page.locator('ap_password');
         this.continuerButtonLocator = page.getByLabel('Continuer');
         this.passwordLocator=page.locator("#ap_password");
         this.loginButtonLocator = page.getByLabel('S\'identifier');
@@ -24,7 +23,7 @@ export class LoginLayoutPage {
         async login1(){
             
             await this.identificationButton.click();
-            await this.emailLocator.fill('lemogo.collins21@myiuc.com');
+            await this.emailLocator.fill('collinskamnen@gmail.com');
             await this.continuerButtonLocator.click();
             await this.passwordLocator.fill('KAMNEn1234#');
             await this.loginButtonLocator.click();
