@@ -1,7 +1,8 @@
 import { test as baseTest } from '@playwright/test';
-import { HomePage } from '../Page/Home';
-import { CartPage } from '../Page/Cart';
-import { ProductPage } from '../Page/Product';
+import { HomePage } from '../Pages/HomePage';
+import { CartPage } from '../Pages/CartPage';
+import { ProductPage } from '../Pages/ProductPage';
+import { LargeAppliancesPage } from '../Pages/LargeAppliancesPage';
 
 // Créer une fixture qui initialise les pages de l'application
 const test = baseTest.extend({
@@ -16,7 +17,12 @@ const test = baseTest.extend({
   productPage: async ({ page }, use) => {
     const productPage = new ProductPage(page);
     await use(productPage);
+  },
+  largeAppliancesPage: async ({ page }, use) => {
+    const largeAppliancesPage = new LargeAppliancesPage(page);
+    await use(largeAppliancesPage);
   }
+
 });
 
 export { test };  // Exporter la fixture customisée
