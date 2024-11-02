@@ -60,6 +60,14 @@ Feature: Gestion des adresses sur Amazon.fr
     When l'utilisateur accède à la page "Ajouter une adresse"
     And l'utilisateur saisit les informations d'adresse valides
     Then une nouvelle adresse de livraison est ajoutée à la liste
+
+  Scenario: Modifier une adresse de livraison
+
+    Given l'utilisateur est connecté à son compte Amazon
+    When l'utilisateur accède à la page "Mes adresses"
+    And l'utilisateur sélectionne une adresse existante
+    And l'utilisateur modifie les informations de l'adresse
+    Then les modifications de l'adresse sont enregistrées
     
 Feature: Tests sur les filtres et catégories
 

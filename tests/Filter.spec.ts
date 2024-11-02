@@ -1,4 +1,4 @@
-import { test } from './fixture';
+import { test } from './fixtures';
 
 test.beforeEach(async ({ page }) => {
     await page.route('**/*', route => {
