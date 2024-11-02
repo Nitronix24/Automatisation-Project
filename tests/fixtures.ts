@@ -1,8 +1,8 @@
 import { test as baseTest } from '@playwright/test';
-import { HomePage } from '../Pages/HomePage';
-import { CartPage } from '../Pages/CartPage';
-import { ProductPage } from '../Pages/ProductPage';
-import { LargeAppliancesPage } from '../Pages/LargeAppliancesPage';
+import { HomePage } from '../pages/HomePage';
+import { CartPage } from '../pages/CartPage';
+import { ProductPage } from '../pages/ProductPage'; 
+import { LargeAppliancesPage } from '../pages/LargeAppliancesPage';
 
 // Créer une fixture qui initialise les pages de l'application
 const test = baseTest.extend({
