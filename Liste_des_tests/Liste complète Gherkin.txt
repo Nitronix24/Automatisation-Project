@@ -1,15 +1,16 @@
 Feature: Création et connexion sur Amazon.fr
 
   Scenario: Login
-    Given User
+    Given je dispose d'un compte utilisateur 
     When je clique sur Bonjour,identifiez-vous compte et listes
     and j'entre l'adresse email
     and je clique sur continuer
     and j'entre le mot de Passer
-    Then je clique sur continuer
+    and je clique sur continuer 
+    Then je devrais être connecter au compte
 
   Scenario: Creation de compte
-    Given je suis la page d'accueil d'Amazon
+    Given je suis la page d'accueil d'Amazon et je ne dispose pas de compte
     When je clique sur Bonjour,identifiez-vous compte et listes
     And je clique sur creer votre compte Amazon
     and j'entre mon nom complet
@@ -19,7 +20,8 @@ Feature: Création et connexion sur Amazon.fr
     and je clique sur continuer
     and je complete le puzzle
     and entrer le code recu sur mon adresse email
-    Then je clique sur verifier
+    and je vérifie 
+    Then je devrais avoir mon compte créé 
 
 Feature: Gestion du panier sur Amazon.com
 
