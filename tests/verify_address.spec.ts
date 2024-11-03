@@ -13,6 +13,7 @@ test.beforeEach(async ({ page }) => {
     await page.getByLabel('S\'identifier').click();
 });
 
+
 test('verify address', async ({ Verify }) => {
     await Verify.verify();
 });
