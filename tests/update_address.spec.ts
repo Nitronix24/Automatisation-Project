@@ -1,4 +1,4 @@
-import { test } from "./modifierAddress_object/fixtures";
+import { test } from "../pages/modifierAddress_object/fixtures";
 
 test.beforeEach(async ({ page }) => {
     // Naviguer vers Amazon.fr et se connecter
