@@ -7,8 +7,9 @@ Vérifier le contenu de la page d’accueil,                                 Ant
 un produit dans le moteur de recherche puis l’acheter,      
 Rechercher
 
-Rechercher un produit par une catégorie de produit,                       Gael
-Sur une catégorie vérifier les filtres et différentes catégories,         Gael
+Rechercher un produit par une catégorie de produit,                       Gaël
+Sur une catégorie vérifier les filtres et différentes catégories,         Gaël
+Changer la langue du site                                                 Gaël
 
 Mettre un produit dans le panier,                                         Cedric
 Vérifier les quantités de produit dans le panier,                         Cedric
