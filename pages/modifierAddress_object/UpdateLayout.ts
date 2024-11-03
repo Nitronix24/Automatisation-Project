@@ -35,7 +35,7 @@ export class UpdateLayout {
         await this.addressEditButton.click();
         await this.fullNameInput.fill('John Doe');
         await this.phoneNumberInput.fill('675943749');
-        await this.addressLine1Input.fill(' 4, Rue Saint-Florentin');
+        await this.addressLine1Input.fill(' 5, Rue Saint-Florentin');
         await this.postalCodeInput.fill('75008');
         await this.cityInput.fill('Paris');
         await this.submitButton.click();
