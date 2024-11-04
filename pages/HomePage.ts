@@ -31,7 +31,7 @@ export class HomePage {
     this.kitchen_and_house = page.locator('a[href="/cuisine-maison-%C3%A9lectrom%C3%A9nager/b/?ie=UTF8&node=57004031&ref_=nav_cs_home"]');
     this.gros_electromenager = page.getByRole('link', { name: 'Gros électroménager' })
 
-    this.logo = page.locator('#nav-logo'); // Sélecteur pour le logo
+    this.logo = page.locator('#nav-logo-sprites'); // Sélecteur pour le logo
     this.nav_search = page.locator('#twotabsearchtextbox'); // Sélecteur pour la barre de recherche
     this.best_sellers = page.locator('#nav_cs_bestsellers'); // Sélecteur pour le bouton meilleurs ventes
     this.vente_flash = page.locator('#nav_cs_gb'); // Sélecteur pour le bouton ventes flash
