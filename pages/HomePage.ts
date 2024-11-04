@@ -25,10 +25,9 @@ export class HomePage {
         this.language = page.locator('#icp-nav-flyout');
         this.change_language = page.locator('#icp-language-translation-hint');
         this.hamburger_menu = page.locator('#nav-hamburger-menu');
-        // this.viewMore = page.getByRole('link', { name: 'Tout afficher', class: 'hmenu-compressed-btn' });
         this.viewMore = page.getByRole('link', { name: 'Tout afficher' }).first()
         this.kitchen_and_house = page.getByRole('link', { name: 'Cuisine et maison', exact:true });
-        this.gros_electromenager = page.getByRole('link', { name: 'Gros électroménager' })
+        this.gros_electromenager = page.locator('a[href="/gp/browse.html?node=57695031&ref_=nav_em__groselectro_0_2_15_14"]:visible');
         this.logo = page.locator('#nav-logo-sprites');
         this.best_sellers = page.getByLabel('navigation').getByRole('link', { name: 'Meilleures ventes' }); // Sélecteur pour le bouton meilleurs ventes
         this.vente_flash = page.getByRole('link', { name: 'Ventes Flash' }); // Sélecteur pour le bouton ventes flash

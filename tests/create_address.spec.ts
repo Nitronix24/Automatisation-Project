@@ -1,4 +1,4 @@
-import { test } from "../pages/createAdress_object/fixtures";
+import { test } from "./fixtures";
 
 
 test.beforeEach(async ({ page }) => {
