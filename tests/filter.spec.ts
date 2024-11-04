@@ -36,10 +36,10 @@ test('filter by product', async ({page, homePage, largeAppliancesPage }) => {
 
     await homePage.hamburgerMenuClick();
 
-    await homePage.KitchenAndHouseClick();
-    
     await homePage.viewMoreClick();
 
+    await homePage.KitchenAndHouseClick();
+    
     await homePage.grosElectromenagerClick();
 
     await largeAppliancesPage.seeWashingMachineClick();
