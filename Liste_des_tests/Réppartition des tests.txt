@@ -3,8 +3,9 @@ login,                                                                    Collin
 logout,                                                                   Collins
 Création de compte avec un email existant,                                Collins
 
-Vérifier le logo,                                                         Antonin
-Vérifier la redirection des boutons du header vers les bonnes pages       Antonin      
+Vérifier le contenu de la page d’accueil,                                 Antonin
+un produit dans le moteur de recherche puis l’acheter,      
+Rechercher
 
 Rechercher un produit par une catégorie de produit,                       Gaël
 Sur une catégorie vérifier les filtres et différentes catégories,         Gaël
