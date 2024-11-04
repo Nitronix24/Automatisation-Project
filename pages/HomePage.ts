@@ -11,6 +11,9 @@ export class HomePage {
     readonly viewMore: Locator;
     readonly kitchen_and_house: Locator;
     readonly gros_electromenager: Locator;
+    readonly logo: Locator;
+    readonly best_sellers: Locator;
+    readonly vente_flash: Locator;
 
     constructor(page : Page) {
         this.page = page;
@@ -23,6 +26,9 @@ export class HomePage {
         this.viewMore = page.getByRole('link', { name: 'Tout afficher', class: 'hmenu-compressed-btn' });
         this.kitchen_and_house = page.getByRole('link', { name: 'Cuisine et maison' });
         this.gros_electromenager = page.locator('a[href="/gp/browse.html?node=57695031&ref_=nav_em__groselectro_0_2_15_14"]:visible');
+        this.logo = page.locator('#nav-logo-sprites');
+        this.best_sellers = page.getByLabel('navigation').getByRole('link', { name: 'Meilleures ventes' }); // Sélecteur pour le bouton meilleurs ventes
+        this.vente_flash = page.getByRole('link', { name: 'Ventes Flash' }); // Sélecteur pour le bouton ventes flash
 
         }
         
@@ -58,5 +64,21 @@ export class HomePage {
     async grosElectromenagerClick() {
         await this.gros_electromenager.first().click({ force: true });
 
+    }
+    
+    async isLogoVisible() {
+        return await this.logo.isVisible();
+    }
+
+    async clickLogo(){
+        await this.logo.click();
+    }
+
+    async clickBestSellers(){
+        await this.best_sellers.click();
+    }
+
+    async clickVenteFlash(){
+        await this.vente_flash.click();
     }
 }
