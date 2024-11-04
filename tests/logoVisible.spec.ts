@@ -1,6 +1,5 @@
 import { expect } from '@playwright/test';
 import { test } from './fixtures';
-import { HomePage as page } from '../pages/HomePage';
 
 
 test.beforeEach(async ({ page }) => {

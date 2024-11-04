@@ -33,8 +33,8 @@ export class HomePage {
 
     this.logo = page.locator('#nav-logo-sprites'); // Sélecteur pour le logo
     this.nav_search = page.locator('#twotabsearchtextbox'); // Sélecteur pour la barre de recherche
-    this.best_sellers = page.locator('#nav_cs_bestsellers'); // Sélecteur pour le bouton meilleurs ventes
-    this.vente_flash = page.locator('#nav_cs_gb'); // Sélecteur pour le bouton ventes flash
+    this.best_sellers = page.getByLabel('navigation').getByRole('link', { name: 'Meilleures ventes' }); // Sélecteur pour le bouton meilleurs ventes
+    this.vente_flash = page.getByRole('link', { name: 'Ventes Flash' }); // Sélecteur pour le bouton ventes flash
   }
     
   async searchForProduct(productName: string) {
