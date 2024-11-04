@@ -3,6 +3,7 @@ import { Page, Locator, expect } from '@playwright/test';
 export class HomePage {
     readonly page: Page;
     readonly searchBox: Locator;
+    readonly cookieButton: Locator;
     readonly searchButton: Locator;
     readonly cartLink: Locator;
     readonly language: Locator;
@@ -17,6 +18,7 @@ export class HomePage {
 
     constructor(page : Page) {
         this.page = page;
+        this.cookieButton = page.locator('//*[@id="sp-cc-rejectall-link"]'); // Sélecteur pour le bouton de refus des cookies
         this.searchBox = page.locator('//*[@id="twotabsearchtextbox"]');
         this.searchButton = page.locator('//*[@id="nav-search-submit-button"]');
         this.cartLink = page.locator('//*[@id="nav-cart-count-container"]');
