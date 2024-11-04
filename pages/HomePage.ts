@@ -25,7 +25,7 @@ export class HomePage {
         this.language = page.locator('#icp-nav-flyout');
         this.change_language = page.locator('#icp-language-translation-hint');
         this.hamburger_menu = page.locator('#nav-hamburger-menu');
-        this.viewMore = page.getByRole('link', { name: 'Tout afficher' }).first()
+        this.viewMore = page.getByRole('link', { name: 'Tout afficher' })
         this.kitchen_and_house = page.getByRole('link', { name: 'Cuisine et maison', exact:true });
         this.gros_electromenager = page.locator('a[href="/gp/browse.html?node=57695031&ref_=nav_em__groselectro_0_2_15_14"]:visible');
         this.logo = page.locator('#nav-logo-sprites');
