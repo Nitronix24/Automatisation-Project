@@ -11,7 +11,6 @@ const addressesWithDetails: { address: string; city: string; postalCode: string 
     { address: '45, Rue de la Gare', city: 'Nantes', postalCode: '44000' },
     { address: '78, Rue du Faubourg', city: 'Strasbourg', postalCode: '67000' },
     { address: '88, Boulevard de l’Observatoire', city: 'Montpellier', postalCode: '34000' },
-    { address: '34, Avenue des Champs-Élysées', city: 'Bordeaux', postalCode: '33000' },
     { address: '56, Rue Faidherbe', city: 'Lille', postalCode: '59000' },
     { address: '15, Rue de la Paix', city: 'Paris', postalCode: '75002' },
     { address: '20, Rue de la République', city: 'Marseille', postalCode: '13002' },
@@ -19,7 +18,6 @@ const addressesWithDetails: { address: string; city: string; postalCode: string 
     { address: '40, Avenue des Champs-Élysées', city: 'Paris', postalCode: '75008' },
     { address: '50, Rue de la Gare', city: 'Strasbourg', postalCode: '67000' },
 ];
-
 
 export class CreateLayoutAdress {
     readonly page: Page;
