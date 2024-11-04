@@ -1,7 +1,5 @@
 import { test } from './fixtures';
 
-test.describe('Tests des filtres', () => {
-    
 test.beforeEach(async ({ page }) => {
     await page.route('**/*', route => {
         const url = route.request().url();
@@ -17,22 +15,34 @@ test.beforeEach(async ({ page }) => {
     await page.locator('#sp-cc-rejectall-link').click();
 });
 
-test('Filtrage par marque et vendeur', async ({page, homePage, largeAppliancesPage }) => {
+test('filter by brand and seller', async ({page, homePage, largeAppliancesPage }) => {
+
     await homePage.hamburgerMenuClick();
+
+    await homePage.viewMoreClick();
+
     await homePage.KitchenAndHouseClick();
+
     await homePage.grosElectromenagerClick();
+
     await largeAppliancesPage.filterByBrand();
+
     await largeAppliancesPage.seeMoreSellerClick();
+
     await largeAppliancesPage.filterBySeller();
+
     await page.waitForTimeout(5000);
 });
 
-test('Filtrage par produit', async ({page, homePage, largeAppliancesPage }) => {
+test('filter by product', async ({page, homePage, largeAppliancesPage }) => {
+
     await homePage.hamburgerMenuClick();
-    await homePage.KitchenAndHouseClick();
-    await homePage.grosElectromenagerClick();
-    await largeAppliancesPage.seeWashingMachineClick(); 
-    await page.waitForTimeout(5000);
-});
 
+    await homePage.KitchenAndHouseClick();
+
+    await homePage.grosElectromenagerClick();
+
+    await largeAppliancesPage.seeWashingMachineClick(); 
+
+    await page.waitForTimeout(5000);
 });

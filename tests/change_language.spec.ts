@@ -1,4 +1,4 @@
-import { test } from './fixtures';  // Importer les fixtures depuis fixtures.js
+import { test } from './fixtures';
 
 test.beforeEach(async ({ page }) => {
     await page.route('**/*', route => {
@@ -16,8 +16,10 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('change language', async ({page, homePage }) => {
-    await homePage.languageClick();
-    await homePage.changeLanguageClick();
-    await page.waitForTimeout(5000);
 
+    await homePage.languageClick();
+
+    await homePage.changeLanguageClick();
+
+    await page.waitForTimeout(5000);
 });

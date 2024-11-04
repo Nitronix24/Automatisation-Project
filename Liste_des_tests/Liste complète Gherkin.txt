@@ -1,74 +1,79 @@
 Feature: Création et connexion sur Amazon.fr
 
-  Scenario: Login
-    Given User
-    When je clique sur Bonjour,identifiez-vous compte et listes
-    and j'entre l'adresse email
-    and je clique sur continuer
-    and j'entre le mot de Passer
-    Then je clique sur continuer
+  Scenario: Connexion
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je clique sur "Bonjour, identifiez-vous" dans le menu "Compte et listes"
+    And j'entre mon adresse email
+    And j'entre mon mot de passe
+    And je clique sur "Se connecter"
+    Then je suis connecté à mon compte
 
-  Scenario: Creation de compte
-    Given je suis la page d'accueil d'Amazon
-    When je clique sur Bonjour,identifiez-vous compte et listes
-    And je clique sur creer votre compte Amazon
-    and j'entre mon nom complet
-    and j'entre mon numero de telephone portable ou l'adresse-email
-    and j'entre le mot de passe
-    and j'entre le mot de passe a nouveau
-    and je clique sur continuer
-    and je complete le puzzle
-    and entrer le code recu sur mon adresse email
-    Then je clique sur verifier
+  Scenario: Création de compte
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je clique sur "Bonjour, identifiez-vous" dans le menu "Compte et listes"
+    And je clique sur "Créer votre compte Amazon"
+    And j'entre mon nom complet
+    And j'entre mon numéro de téléphone portable ou mon adresse email
+    And j'entre un mot de passe
+    And je confirme le mot de passe
+    And je clique sur "Continuer"
+    And je complète le puzzle de vérification
+    And j'entre le code reçu par email
+    Then mon compte est créé et vérifié
 
-Feature: Gestion du panier sur Amazon.com
 
-  Scenario: Utilisateur visualise le contenu de son panier
-    Given Je suis sur la page d'accueil d'Amazon
-    When Je recherche "écouteurs sans fil" dans la barre de recherche
-    And Je clique sur le premier produit dans les résultats de recherche
-    And Je clique sur le bouton "Ajouter au panier"
-    And Je clique sur "Voir mon panier"
-    Then Je devrais être redirigé vers la page du panier
-    And Je devrais voir "écouteurs sans fil" dans mon panier
+Feature: Gestion du panier sur Amazon.fr
 
-  Scenario: Utilisateur supprime un produit de son panier
-    Given Je suis sur la page d'accueil d'Amazon
-    When Je recherche "vêtements" dans la barre de recherche
-    And Je clique sur le premier produit dans les résultats de recherche
-    And Je clique sur le bouton "Ajouter au panier"
-    And Je clique sur "Voir mon panier"
-    And Je clique sur le bouton "Supprimer" à côté du produit
-    Then Je devrais voir un message "L'article a été supprimé de votre panier"
-    And Le produit ne devrait plus apparaître dans mon panier
+  Scenario: L'utilisateur visualise le contenu de son panier
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je recherche "écouteurs sans fil" dans la barre de recherche
+    And je clique sur le premier produit dans les résultats de recherche
+    And je clique sur le bouton "Ajouter au panier"
+    And je clique sur "Voir mon panier"
+    Then je devrais être redirigé vers la page du panier
+    And je devrais voir "écouteurs sans fil" dans mon panier
 
-  Scenario: Utilisateur n'a pas d'article dans le panier lors de sa première visite
-    Given Je suis sur la page d'accueil d'Amazon
-    When Je clique sur "Voir mon panier"
-    Then Je devrais voir un message "Votre panier est vide"
-    And Le bouton "Passer la commande" ne devrait pas être actif
+  Scenario: L'utilisateur supprime un produit de son panier
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je recherche "vêtements" dans la barre de recherche
+    And je clique sur le premier produit dans les résultats de recherche
+    And je clique sur le bouton "Ajouter au panier"
+    And je clique sur "Voir mon panier"
+    And je clique sur le bouton "Supprimer" à côté du produit
+    Then je devrais voir un message "L'article a été supprimé de votre panier"
+    And le produit ne devrait plus apparaître dans mon panier
+
+  Scenario: L'utilisateur n'a pas d'article dans le panier lors de sa première visite
+    Given je suis sur la page d'accueil d'Amazon
+    When je clique sur "Voir mon panier"
+    Then je devrais voir un message "Votre panier est vide"
+    And le bouton "Passer la commande" ne devrait pas être actif
+
 
 Feature: Gestion des adresses sur Amazon.fr
 
   Scenario: Vérifier les adresses de livraison disponibles pour un utilisateur connecté
-    Given l'utilisateur est connecté à son compte Amazon
-    When l'utilisateur accède à la page "Mes adresses"
-    Then l'utilisateur voit une liste des adresses de livraison disponibles
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je suis connecté à mon compte
+    And j'accède à la page "Mes adresses"
+    Then je devrais voir la liste des adresses de livraison disponibles
 
   Scenario: Ajouter une nouvelle adresse de livraison
-    Given l'utilisateur est connecté à son compte Amazon
-    When l'utilisateur accède à la page "Ajouter une adresse"
-    And l'utilisateur saisit les informations d'adresse valides
-    Then une nouvelle adresse de livraison est ajoutée à la liste
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je suis connecté à mon compte Amazon
+    And j'accède à la page "Ajouter une adresse"
+    And je saisis les informations d'adresse valides
+    Then je devrais voir qu'une nouvelle adresse de livraison a été ajoutée à la liste
 
   Scenario: Modifier une adresse de livraison
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je suis connecté à mon compte Amazon
+    And j'accède à la page "Mes adresses"
+    And je sélectionne une adresse existante
+    And je modifie les informations de l'adresse
+    Then je devrais voir que les modifications de l'adresse sont enregistrées
 
-    Given l'utilisateur est connecté à son compte Amazon
-    When l'utilisateur accède à la page "Mes adresses"
-    And l'utilisateur sélectionne une adresse existante
-    And l'utilisateur modifie les informations de l'adresse
-    Then les modifications de l'adresse sont enregistrées
-    
+
 Feature: Tests sur les filtres et catégories
 
   Scenario: Sur une catégorie, vérifier les filtres "Marques" et "Vendeur"
@@ -87,26 +92,38 @@ Feature: Tests sur les filtres et catégories
     And je clique sur "Lave-linges"
     Then je devrais arriver sur une page avec uniquement des lave-linges
 
+
 Feature: Vérification de la page d'accueil
 
   Scenario: Vérifier la présence du logo
-    Given je suis sur une page du site
+    Given je suis sur la page d'accueil d'Amazon.fr
     Then je devrais voir le logo d'Amazon
+
+  Scenario: Vérifier la redirection en cliquant sur le logo
+    Given je suis sur la page d'accueil d'Amazon.fr
     When je clique sur le logo
     Then je devrais être redirigé vers la page d'accueil
 
+
 Feature: Vérification des produits populaires
 
-  Scenario: Vérifier la section des produits populaires
-    Given je suis sur la page d'accueil d'Amazon
-    Then je devrais voir une section pour les produits populaires
-    When je clique sur le bouton produits populaires
-    Then je devrais être redirigé vers la section produits populaires
+  Scenario: Afficher la section des produits populaires
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je clique sur le bouton "Produits populaires"
+    Then je suis redirigé vers la section des produits populaires
 
 Feature: Vérification des ventes flash
 
-  Scenario: Vérifier les recommandations personnalisées
-    Given je suis sur la page d'accueil d'Amazon
-    Then je devrais voir une section ventes flash
-    When je clique sur le bouton ventes flash
-    Then je devrais être redirigé vers la section ventes flash
+  Scenario: Afficher la section des ventes flash
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je clique sur le bouton "Ventes flash"
+    Then je suis redirigé vers la section des ventes flash
+
+
+Feature: Changer la langue du site
+
+  Scenario: Mettre le site en anglais
+    Given je suis sur la page d'accueil d'Amazon.fr
+    When je clique sur le sélecteur de langue
+    And je choisis l'option "anglais"
+    Then le site est affiché en anglais
