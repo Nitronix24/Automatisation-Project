@@ -8,7 +8,7 @@ export class CartPage {
     readonly deleteButton: Locator;
     readonly passCommandButton: Locator;
 
-    constructor(page) {
+    constructor(page: Page) {
       this.page = page;
       this.productTitle = page.locator('//*[@class="a-text-normal"]');
       this.emptyCartMessage = page.locator('//*[@id="sc-empty-cart"]');
